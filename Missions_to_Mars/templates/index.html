@@ -15,8 +15,19 @@
         <h1> Mission to Mars </h1>
         <p><a class= "btn btn-primary btn-lg" href="/scrape" role="button"> Scrape New Data</a></p>
     </div>
-        <h5> Latest Mars News</h5>
+        <h3> Latest Mars News</h3>
         <h6> {{mars.Title}} </h6>
+        <h5 style='color: black;'> {{mars.Mars_Paragraph}} </h5>
+        <p style='color:blue;'>  {{mars.news_p}}</p>
+        
+
+        <h4> Featured Mars Image </h4>
+            <img src = "{{mars.Featured_image}}">
+
+        
+        <h4> Mars Facts</h4>
+            {{mars.Mars_Facts_Table}}
+
 
     
 </body>

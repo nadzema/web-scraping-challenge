@@ -11,14 +11,10 @@ client = pymongo.MongoClient('mongodb://localhost:27017')
 db = client.mars_db
 collection = db.mars 
 
-def initial_browser():
+def scrape():
+    
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
-    return browser
-
-def scrape():
-    browser = initial_browser()
-    collection.drop()
 
     #All NASA information
     Mars_nasa_url = "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
@@ -102,5 +98,5 @@ def scrape():
     }
             
     collection.insert(all_data_mars)
-
-print(scrape())
+    
+    return all_data_mars
